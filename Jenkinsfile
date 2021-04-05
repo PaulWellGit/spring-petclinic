@@ -13,7 +13,7 @@ pipeline {
       parallel {
         stage('Testing') {
           steps {
-            sh 'mvn sonar:sonar -Dsonar.login=2ba893fb18efc67b61c2299301fb75943fb6d783 -Dsonar.host.url=http://localhost:9000'
+            sh 'mvn sonar:sonar -Dsonar.login=4875c0cce292b560bbde45d0000338cfd71f332a -Dsonar.host.url=http://localhost:9000'
           }
         }
 

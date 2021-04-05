@@ -13,7 +13,8 @@ pipeline {
       parallel {
         stage('Testing') {
           steps {
-            sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dlicense.skip=true'
+            sh 'mvn clean install'
+            sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000'
           }
         }
 

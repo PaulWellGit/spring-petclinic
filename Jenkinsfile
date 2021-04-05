@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Start Build'
-        sh 'mvn clean install -Dlicense.skip=true'
+        sh 'mvn clean install'
         echo 'Build Complete'
       }
     }
@@ -13,7 +13,6 @@ pipeline {
       parallel {
         stage('Testing') {
           steps {
-            sh 'mvn clean install'
             sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000'
           }
         }

@@ -5,12 +5,14 @@
   tasks:
   - name: copy the jar file to target host
     copy:
-      src: /spring-petclinic-2.4.2.jar
-      dest: /petclinic.jar
+      src: /target/spring-petclinic-2.4.2.jar
+      dest: petclinic.jar
   - name: install openjdk11
+    become: yes
     apt:
       name: openjdk-11-jre
-      state: present
+      state: latest
+      update_cache: yes
   - name: run the jar file
     shell: java -jar petclinic.jar
     args:

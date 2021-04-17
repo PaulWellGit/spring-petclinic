@@ -14,6 +14,6 @@
       state: latest
       update_cache: yes
   - name: run the jar file
-    shell: java -jar petclinic.jar &
+    shell: nohup java -jar petclinic.jar &
     args:
       executable: /bin/bash

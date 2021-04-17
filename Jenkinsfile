@@ -11,7 +11,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'ansible-playbook playbook.yaml'
+        sh 'ansible-playbook playbook.yaml -e \'ansible_python_interpreter=/usr/bin/python3\''
       }
     }
 
